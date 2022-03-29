@@ -9,5 +9,8 @@
         <module name="EpiesaAutomationProject" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="main" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
