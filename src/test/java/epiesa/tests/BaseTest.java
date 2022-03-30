@@ -1,22 +1,21 @@
 package epiesa.tests;
 
 import epiesa.pages.BasePage;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
+import epiesa.pages.HomePage;
+import epiesa.pages.LoginPage;
 import org.testng.annotations.BeforeSuite;
 
-public class BaseTest extends BasePage {
+
+public class BaseTest {
+
+    public HomePage homePage = new HomePage();
+    public LoginPage loginPage = new LoginPage();
 
     @BeforeSuite
     public void setUp() {
-        Assert.assertTrue(goToHomePage(), "An error occurred while navigating to the home page!");
+        BasePage.setUp();
     }
 
-    @AfterSuite
-    public void tearDown() {
-        closeBrowser();
-    }
+    /*@AfterSuite
+    public void tearDown() { BasePage.tearDown(); }*/
 }
