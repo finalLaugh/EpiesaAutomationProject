@@ -17,11 +17,4 @@ public class HomepageTests extends BaseTest {
         Assert.assertEquals(pageTitle, "Catalog piese auto online | +50 magazine in tara", "The title did not match.");
     }
 
-    @Test(description = "Verify welcome message")
-    public void homePageGreeting() {
-        String greeting = homePage.getWelcomeMessage();
-        Assert.assertEquals(greeting, "LA PRET FOARTE BUN!", "The greeting didn't match.");
-        Assert.assertTrue(greeting.contains("PRET"), "Welcome message did not match!");
-    }
-
 }
