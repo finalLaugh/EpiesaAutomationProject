@@ -1,24 +1,18 @@
 package epiesa.pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.awt.*;
-
-import static org.testng.CommandLineArgs.LOG;
-
 public class BasePage {
+    public static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
 
     public static WebDriver driver;
-    public static Logger LOG = LoggerFactory.getLogger(BasePage.class);
 
     public static void setUp() {
-
         LOG.info("Start test");
         WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.driver", "C://Webdrivers/chromedriver.exe");
@@ -29,21 +23,7 @@ public class BasePage {
         String url = "http://epiesa.ro";
         driver.get(url);
         LOG.info("Open browser");
-    }
 
-    public void goBack() {
-        LOG.info("Go back");
-        driver.navigate().back();
-    }
-
-    public void goForward() {
-        LOG.info("Go forward");
-        driver.navigate().forward();
-    }
-
-    public void refresh() {
-        LOG.info("Refresh web page");
-        driver.navigate().refresh();
     }
 
     public static void tearDown() {
@@ -58,4 +38,11 @@ public class BasePage {
             e.printStackTrace();
         }
     }
+
+    public void hoverOverElement(By locator) {
+        WebElement element = driver.findElement(locator);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
+    }
+
 }

@@ -23,9 +23,13 @@ public class LoginPage extends BasePage {
     By googleSearchButton = By.cssSelector("div[class='FPdoLc lJ9FBc'] input[name='btnK']");
     By googleSearchField = By.xpath("//input[@name='q']");
 
-    public void contulMeuButton(String email, String parola) {
+    public LoginPage doHover() {
         LOG.info("Hover on 'Contul meu'");
-        driver.findElement(contulMeu).click();
+        hoverOverElement(contulMeu);
+        return this;
+    }
+
+    public void contulMeuButton(String email, String parola) {
         LOG.info("Click on 'Login / Cont nou' button");
         driver.findElement(logInButton).click();
         sleep(1000);
@@ -38,20 +42,12 @@ public class LoginPage extends BasePage {
         sleep(1000);
         LOG.info("Click on 'Autentificare'");
         driver.findElement(autentificare).submit();
-        driver.navigate().to("http://google.com");
-        driver.findElement(googleSuntDeAcord).click();
-        driver.findElement(googleSearchField).click();
-        driver.findElement(googleSearchField).sendKeys("test search");
-        sleep(2000);
-        //driver.findElement(googleSearchButton).submit();
-        driver.navigate().refresh();
-        sleep(2000);
-        driver.navigate().back();
-        sleep(2000);
-        driver.navigate().forward();
     }
 
     public void register(String email, String nume, String prenume, String parola, String confParola) {
+        LOG.info("Click on 'Login / Cont nou' button");
+        driver.findElement(logInButton).click();
+        sleep(1000);
         LOG.info("Complete e-mail address.");
         driver.findElement(emailRegister).click();
         sleep(1000);
