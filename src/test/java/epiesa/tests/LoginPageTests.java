@@ -1,18 +1,17 @@
 package epiesa.tests;
 
-import epiesa.pages.LoginPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {
-    LoginPage loginPage = new LoginPage();
 
-    /*@Test
+    @Test(dependsOnMethods = "register")
     public void contulMeuButton() {
         loginPage.doHover();
-        loginPage.contulMeuButton("futureisahead@gmail.com", "katana88");
-    }*/
+        loginPage.login("futureisahead@gmail.com", "katana88");
+        loginPage.doHover();
+        loginPage.logout();
+    }
 
     @Test
     public void register() {

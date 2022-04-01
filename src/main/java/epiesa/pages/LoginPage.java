@@ -1,10 +1,6 @@
 package epiesa.pages;
 
 import org.openqa.selenium.By;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.swing.*;
 
 public class LoginPage extends BasePage {
 
@@ -19,9 +15,7 @@ public class LoginPage extends BasePage {
     By emailLogin = By.xpath("//input[@name='login_utilizator']");
     By parolaLogin = By.xpath("//input[@name='login_parola']");
     By autentificare = By.xpath("//button[normalize-space()='Autentificare']");
-    By googleSuntDeAcord = By.xpath("//div[text()='Sunt de acord']");
-    By googleSearchButton = By.cssSelector("div[class='FPdoLc lJ9FBc'] input[name='btnK']");
-    By googleSearchField = By.xpath("//input[@name='q']");
+    By delogare = By.xpath("(//a[normalize-space()='DELOGHEAZA-MA'])[2]");
 
     public LoginPage doHover() {
         LOG.info("Hover on 'Contul meu'");
@@ -29,7 +23,12 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public void contulMeuButton(String email, String parola) {
+    public void logout() {
+        LOG.info("Click on 'Delogheaza-ma'");
+        driver.findElement(delogare).click();
+    }
+
+    public void login(String email, String parola) {
         LOG.info("Click on 'Login / Cont nou' button");
         driver.findElement(logInButton).click();
         sleep(1000);
@@ -47,29 +46,29 @@ public class LoginPage extends BasePage {
     public void register(String email, String nume, String prenume, String parola, String confParola) {
         LOG.info("Click on 'Login / Cont nou' button");
         driver.findElement(logInButton).click();
-        sleep(1000);
+        sleep(500);
         LOG.info("Complete e-mail address.");
         driver.findElement(emailRegister).click();
-        sleep(1000);
+        sleep(500);
         driver.findElement(emailRegister).sendKeys(email);
         LOG.info("Complete nume.");
         driver.findElement(numeRegister).click();
-        sleep(1000);
+        sleep(500);
         driver.findElement(numeRegister).sendKeys(nume);
         LOG.info("Complete prenume.");
         driver.findElement(prenumeRegister).click();
-        sleep(1000);
+        sleep(500);
         driver.findElement(prenumeRegister).sendKeys(prenume);
         LOG.info("Complete parola.");
         driver.findElement(parolaRegister).click();
-        sleep(1000);
+        sleep(500);
         driver.findElement(parolaRegister).sendKeys(parola);
         LOG.info("Complete confirma parola.");
         driver.findElement(parolaRegisterConfirmare).click();
-        sleep(1000);
+        sleep(500);
         driver.findElement(parolaRegisterConfirmare).sendKeys(confParola);
         LOG.info("Click on 'Inregistrare'");
-        sleep(1000);
+        sleep(500);
         driver.findElement(inregistrareButton).submit();
     }
 }
