@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
     By autentificare = By.xpath("//button[normalize-space()='Autentificare']");
     By delogare = By.xpath("(//a[normalize-space()='DELOGHEAZA-MA'])[2]");
 
-    public LoginPage doHover() {
+    public LoginPage hoverOver() {
         LOG.info("Hover on 'Contul meu'");
         hoverOverElement(contulMeu);
         return this;

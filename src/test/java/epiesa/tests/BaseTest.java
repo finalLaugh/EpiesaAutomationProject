@@ -3,6 +3,8 @@ package epiesa.tests;
 import epiesa.pages.BasePage;
 import epiesa.pages.HomePage;
 import epiesa.pages.LoginPage;
+import epiesa.pages.ShoppingCart;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 
@@ -10,6 +12,7 @@ public class BaseTest {
 
     public HomePage homePage = new HomePage();
     public LoginPage loginPage = new LoginPage();
+    public ShoppingCart shoppingCart = new ShoppingCart();
 
     @BeforeSuite
     public void setUp() {
