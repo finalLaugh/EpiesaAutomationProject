@@ -23,7 +23,6 @@ public class BasePage {
         String url = "http://epiesa.ro";
         driver.get(url);
         LOG.info("Open browser");
-
     }
 
     public static void tearDown() {
