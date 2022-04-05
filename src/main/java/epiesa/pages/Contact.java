@@ -39,9 +39,7 @@ public class Contact extends BasePage {
     }
 
     /**
-     *
      * @param locator - Scroll into view locators that are not yet visible on the page.
-     *
      */
     public Contact scrollIntoView(By locator) {
         scrollElementIntoView(locator);
