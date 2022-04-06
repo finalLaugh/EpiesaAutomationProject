@@ -1,6 +1,6 @@
-package epiesa.tests;
+package epiesa.tests.shoppingCart;
 
-import org.openqa.selenium.By;
+import epiesa.tests.BaseTest;
 import org.testng.annotations.Test;
 
 public class ShoppingCartTests extends BaseTest {
@@ -9,15 +9,6 @@ public class ShoppingCartTests extends BaseTest {
     public void contulMeuButton() {
         shoppingCart.hoverOver();
         loginPage.login("futureisahead@gmail.com", "katana88");
-    }
-
-    @Test
-    public void shoppingCartFullFunc() {
         shoppingCart.shoppingCartTest();
     }
-
-    @Test(enabled = false)
-    public void selectDropDownMenu() {
-    }
-
 }

@@ -1,6 +1,6 @@
-package epiesa.tests;
+package epiesa.tests.home;
 
-import epiesa.pages.HomePage;
+import epiesa.tests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

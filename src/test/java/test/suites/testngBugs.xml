@@ -4,7 +4,8 @@
 <suite name="BugTests" verbose="1" >
     <test name="BugTests" >
         <classes>
-            <class name="epiesa.tests.ContactTests" />
+            <class name="epiesa.tests.contact.ContactTests" />
+            <class name="epiesa.tests.pieseUniversale.PieseUniversaleTests" />
         </classes>
     </test>
 </suite>

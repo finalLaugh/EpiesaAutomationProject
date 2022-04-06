@@ -1,4 +1,7 @@
-package epiesa.pages;
+package epiesa.pages.home;
+
+import epiesa.pages.BasePage;
+import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
 

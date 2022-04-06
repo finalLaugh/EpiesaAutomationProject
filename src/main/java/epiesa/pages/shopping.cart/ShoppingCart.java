@@ -1,5 +1,6 @@
-package epiesa.pages;
+package epiesa.pages.shopping.cart;
 
+import epiesa.pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
@@ -37,71 +38,53 @@ public class ShoppingCart extends BasePage {
     public void shoppingCartTest() {
         LOG.info("Click on 'Piese Auto' menu");
         driver.findElement(pieseAutoMenu).click();
-        sleep(0);
         LOG.info("Click on 'Dacia' logo");
         driver.findElement(daciaLogo).click();
-        sleep(0);
         LOG.info("Click on 'LOGAN' logo/link");
         scrollIntoView(loganLogo);
-        sleep(0);
+        sleep(1000);
         driver.findElement(loganLogo).click();
-        sleep(0);
         LOG.info("Click on 'LOGAN' model");
         driver.findElement(loganModel).click();
-        sleep(0);
         LOG.info("Click on 1.4 engine size");
         scrollIntoView(loganEngine);
-        sleep(0);
+        sleep(1000);
         driver.findElement(loganEngine).click();
-        sleep(0);
         LOG.info("Click on 1.4 - 75 cai");
         driver.findElement(loganHorse).click();
-        sleep(0);
         LOG.info("Click on 'Placute frana' link");
         scrollIntoView(placuteFrana);
-        sleep(0);
+        sleep(1000);
         driver.findElement(placuteFrana).click();
-        sleep(0);
         LOG.info("Click on 'PLACUTE FRANA DACIA LOGAN (LS_) 1.4 (LSOA, LSOC, LSOE, LSOG) BENZINA 75 CAI STARLINE BDS025' link");
         driver.findElement(starlineBDS025).click();
-        sleep(0);
         LOG.info("Click on 'Continut pachet' tab");
         scrollIntoView(continutPachet);
-        sleep(0);
+        sleep(1000);
         driver.findElement(continutPachet).click();
-        sleep(0);
         LOG.info("Click on 'Review-uri' tab");
         driver.findElement(review).click();
-        sleep(0);
         LOG.info("Click on 'Piesa veche la schimb' tab");
         driver.findElement(piesaVecheLaSchimb).click();
-        sleep(0);
         LOG.info("Click on 'Adauga in cos' button");
         scrollIntoView(adaugaInCos);
-        sleep(0);
+        sleep(1000);
         driver.findElement(adaugaInCos).click();
-        sleep(0);
         LOG.info("Click on 'Cosul meu' button");
         driver.findElement(cosulMeu).click();
-        sleep(0);
         LOG.info("Click on quantity drop-down menu and select 2");
         selectDropdown("2");
-        sleep(0);
+        sleep(1000);
         LOG.info("Click on 'Continua cumparaturile' button");
         driver.findElement(continuaCumparaturile).click();
-        sleep(0);
         LOG.info("Click on 'Filtru aer' text link");
         driver.findElement(filtruAer).click();
-        sleep(0);
         LOG.info("Click on 'Adauga in cos' button");
         driver.findElement(filtruAerMT6250).click();
-        sleep(0);
         LOG.info("Click on 'Cosul meu' button");
         driver.findElement(cosulMeu).click();
-        sleep(0);
         LOG.info("Click on 'Bin' button");
         driver.findElement(cosStergereProdus).click();
-        sleep(0);
         LOG.info("Click on 'Trimite Comanda' button");
         driver.findElement(trimiteComanda).click();
         sleep(1000);
@@ -111,12 +94,10 @@ public class ShoppingCart extends BasePage {
         sleep(1000);
         driver.findElement(numeSiPrenume).click();
         driver.findElement(numeSiPrenume).sendKeys("Dragos Cas");
-        sleep(1000);
         LOG.info("Click on 'Trimite Comanda' button");
         driver.findElement(trimiteComanda).click();
+        sleep(1000);
         driver.switchTo().alert().accept();
-
-
     }
 
     public ShoppingCart scrollIntoView(By locator) {
@@ -124,7 +105,7 @@ public class ShoppingCart extends BasePage {
         return this;
     }
 
-    public ShoppingCart selectDropdown(String option){
+    public ShoppingCart selectDropdown(String option) {
         Select down = new Select(driver.findElement(selectCant));
         down.selectByValue(option);
         return this;

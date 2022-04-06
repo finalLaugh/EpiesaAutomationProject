@@ -1,5 +1,6 @@
-package epiesa.tests;
+package epiesa.tests.pieseUniversale;
 
+import epiesa.tests.BaseTest;
 import org.testng.annotations.Test;
 
 public class PieseUniversaleTests extends BaseTest {
@@ -7,11 +8,6 @@ public class PieseUniversaleTests extends BaseTest {
     @Test
     public void pieseUniversaleDropDown() {
         pieseUniversale.pieseUniversaleDropDown();
-    }
-
-    @Test(priority = 1)
-    public void checkImageVisibility() {
         pieseUniversale.checkThumbnail();
-
     }
 }

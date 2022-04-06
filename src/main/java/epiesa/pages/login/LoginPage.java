@@ -1,5 +1,6 @@
-package epiesa.pages;
+package epiesa.pages.login;
 
+import epiesa.pages.BasePage;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {

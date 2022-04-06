@@ -1,5 +1,6 @@
-package epiesa.tests;
+package epiesa.tests.login;
 
+import epiesa.tests.BaseTest;
 import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {
@@ -10,11 +11,5 @@ public class LoginPageTests extends BaseTest {
         loginPage.login("futureisahead@gmail.com", "katana88");
         loginPage.hoverOver();
         loginPage.logout();
-    }
-
-    @Test
-    public void register() {
-        loginPage.hoverOver();
-        loginPage.register("futureisahead@gmail.com", "Cas", "Dragos", "katana88", "katana88");
     }
 }

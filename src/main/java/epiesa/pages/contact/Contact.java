@@ -1,5 +1,6 @@
-package epiesa.pages;
+package epiesa.pages.contact;
 
+import epiesa.pages.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -23,14 +24,14 @@ public class Contact extends BasePage {
      * Iterating through every link in the page and finding the 'mailto' broken link.
      */
     public void checkAnchors() {
-        List<WebElement> anchors = driver.findElements(By.cssSelector("a[href='ailto:vanzari@epiesa.ro']"));
+        List<WebElement> mail = driver.findElements(By.cssSelector("a[href='ailto:vanzari@epiesa.ro']"));
 
-        for (int i = 0; i < anchors.size(); i++) {
-            WebElement ele = anchors.get(i);
+        for (int i = 0; i < mail.size(); i++) {
+            WebElement ele = mail.get(i);
             String url = ele.getAttribute("href");
 
-            if (url != "ailto:vanzari@epiesa.ro") {
-                Assert.assertEquals("mailto:vanzari@epiesa.ro", url);
+            if (url.equals("ailto:vanzari@epiesa.ro")) {
+                Assert.assertEquals("The link is broken.", "mailto:vanzari@epiesa.ro", url);
             }
         }
     }
