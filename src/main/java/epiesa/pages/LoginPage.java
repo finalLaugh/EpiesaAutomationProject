@@ -18,20 +18,38 @@ public class LoginPage extends BasePage {
     By delogare = By.xpath("(//a[normalize-space()='DELOGHEAZA-MA'])[2]");
 
     public LoginPage hoverOver() {
+        sleep(1000);
         LOG.info("Hover on 'Contul meu'");
         hoverOverElement(contulMeu);
         return this;
     }
 
-    public void logout() {
-        LOG.info("Click on 'Delogheaza-ma'");
-        driver.findElement(delogare).click();
+    public void register(String email, String nume, String prenume, String parola, String confParola) {
+        LOG.info("Click on 'Login / Cont nou' button");
+        driver.findElement(logInButton).click();
+        LOG.info("Complete e-mail address.");
+        driver.findElement(emailRegister).click();
+        driver.findElement(emailRegister).sendKeys(email);
+        LOG.info("Complete nume.");
+        driver.findElement(numeRegister).click();
+        driver.findElement(numeRegister).sendKeys(nume);
+        LOG.info("Complete prenume.");
+        driver.findElement(prenumeRegister).click();
+        driver.findElement(prenumeRegister).sendKeys(prenume);
+        LOG.info("Complete parola.");
+        driver.findElement(parolaRegister).click();
+        driver.findElement(parolaRegister).sendKeys(parola);
+        LOG.info("Complete confirma parola.");
+        driver.findElement(parolaRegisterConfirmare).click();
+        driver.findElement(parolaRegisterConfirmare).sendKeys(confParola);
+        sleep(1000);
+        LOG.info("Click on 'Inregistrare'");
+        driver.findElement(inregistrareButton).submit();
     }
 
     public void login(String email, String parola) {
         LOG.info("Click on 'Login / Cont nou' button");
         driver.findElement(logInButton).click();
-        sleep(1000);
         LOG.info("Complete login email.");
         driver.findElement(emailLogin).click();
         driver.findElement(emailLogin).sendKeys(email);
@@ -43,32 +61,8 @@ public class LoginPage extends BasePage {
         driver.findElement(autentificare).submit();
     }
 
-    public void register(String email, String nume, String prenume, String parola, String confParola) {
-        LOG.info("Click on 'Login / Cont nou' button");
-        driver.findElement(logInButton).click();
-        sleep(500);
-        LOG.info("Complete e-mail address.");
-        driver.findElement(emailRegister).click();
-        sleep(500);
-        driver.findElement(emailRegister).sendKeys(email);
-        LOG.info("Complete nume.");
-        driver.findElement(numeRegister).click();
-        sleep(500);
-        driver.findElement(numeRegister).sendKeys(nume);
-        LOG.info("Complete prenume.");
-        driver.findElement(prenumeRegister).click();
-        sleep(500);
-        driver.findElement(prenumeRegister).sendKeys(prenume);
-        LOG.info("Complete parola.");
-        driver.findElement(parolaRegister).click();
-        sleep(500);
-        driver.findElement(parolaRegister).sendKeys(parola);
-        LOG.info("Complete confirma parola.");
-        driver.findElement(parolaRegisterConfirmare).click();
-        sleep(500);
-        driver.findElement(parolaRegisterConfirmare).sendKeys(confParola);
-        LOG.info("Click on 'Inregistrare'");
-        sleep(500);
-        driver.findElement(inregistrareButton).submit();
+    public void logout() {
+        LOG.info("Click on 'Delogheaza-ma'");
+        driver.findElement(delogare).click();
     }
 }

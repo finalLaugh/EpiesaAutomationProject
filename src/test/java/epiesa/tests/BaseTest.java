@@ -18,6 +18,6 @@ public class BaseTest {
         BasePage.setUp();
     }
 
-    /*@AfterSuite
-    public void tearDown() { BasePage.tearDown(); }*/
+    @AfterSuite
+    public void tearDown() { BasePage.tearDown(); }
 }

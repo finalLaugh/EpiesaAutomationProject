@@ -18,20 +18,20 @@ public class PieseUniversale extends BasePage {
     public void pieseUniversaleDropDown() {
         LOG.info("Click on 'Piese universale' drop down menu");
         driver.findElement(pieseUniversale).click();
-        sleep(1000);
         LOG.info("Click on 'Sasiu' text link");
         driver.findElement(sasiu).click();
-        sleep(1000);
+        sleep(2000);
     }
 
     public void checkThumbnail() {
-        WebElement inelEtansare = driver.findElement(By.xpath("//img[@alt='INEL ETANSARE']"));
-        WebElement conectorEsapament = driver.findElement(By.xpath("//img[@alt='CONECTOR ESAPAMENT']"));
+        WebElement inelEtansare = driver.findElement(By.xpath("//img[@alt='INEL ETANSARE' and @src='/images/']"));
+        WebElement conectorEsapament = driver.findElement(By.xpath("//img[@alt='CONECTOR ESAPAMENT' and @src='/images/']"));
+
         // Javascript executor to check image
-        Boolean p = (Boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete " + "&& typeof arguments[0].naturalWidth != \"undefined\" " + "&& arguments[0].naturalWidth > 0", inelEtansare, conectorEsapament);
+        Boolean image = (Boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete " + "&& typeof arguments[0].naturalWidth != \"undefined\" " + "&& arguments[0].naturalWidth > 0", inelEtansare, conectorEsapament);
 
         // Verify if status is true
-        if (p) {
+        if (image) {
             System.out.println("Images are visible");
         } else {
             System.out.println("Some images are broken:" + "\n" + inelEtansare + "\n" + conectorEsapament);
@@ -42,61 +42,4 @@ public class PieseUniversale extends BasePage {
         scrollElementIntoView(locator);
         return this;
     }
-
-    /*public static void checkForBrokenImagesJsoup() throws Exception {
-        //driver.get("https://www.epiesa.ro/accesorii-auto/sasiu/");
-
-        Document doc = Jsoup.connect("https://www.epiesa.ro/accesorii-auto/sasiu/").get();
-        Elements images = doc.select("img");
-        for (Element image : images) {
-            String imageSrc = image.attr("src");
-
-            try {
-                URL url = new URL(imageSrc);
-                url.openConnection();
-                URLConnection urlConnection = url.openConnection();
-                HttpURLConnection httpURLConnection = (HttpURLConnection) urlConnection;
-                httpURLConnection.setConnectTimeout(3000);
-                httpURLConnection.connect();
-
-                if (httpURLConnection.getResponseCode() == 200) {
-                    System.out.println(imageSrc + " >> " + httpURLConnection.getResponseCode() + " >> " + httpURLConnection.getResponseMessage());
-                } else {
-                    System.err.println(imageSrc + " >> " + httpURLConnection.getResponseCode() + " >> " + httpURLConnection.getResponseMessage());
-                }
-                httpURLConnection.disconnect();
-            } catch (IOException e) {
-                System.err.println(imageSrc);
-            }
-        }
-    }*/
-
-    /*public void checkForBrokenImages() throws Exception {
-        driver.get("https://www.epiesa.ro/accesorii-auto/sasiu/");
-        List<WebElement> images = driver.findElements(By.tagName("img"));
-        System.out.println(images.size());
-
-        for (WebElement image : images) {
-            String imageSrc = image.getAttribute("src");
-
-            try {
-                URL url = new URL(imageSrc);
-                url.openConnection();
-                URLConnection urlConnection = url.openConnection();
-                HttpURLConnection httpURLConnection = (HttpURLConnection) urlConnection;
-                httpURLConnection.setConnectTimeout(3000);
-                httpURLConnection.connect();
-
-                if (httpURLConnection.getResponseCode() == 200) {
-                    System.out.println(imageSrc + " >> " + httpURLConnection.getResponseCode() + " >> " + httpURLConnection.getResponseMessage());
-                } else {
-                    System.err.println(imageSrc + " >> " + httpURLConnection.getResponseCode() + " >> " + httpURLConnection.getResponseMessage());
-                }
-                httpURLConnection.disconnect();
-            } catch (IOException e) {
-                System.err.println(imageSrc);
-            }
-        }
-    }*/
-
 }

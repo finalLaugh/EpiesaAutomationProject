@@ -1,12 +1,10 @@
 package epiesa.tests;
 
-import org.openqa.selenium.By;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginPageTests extends BaseTest {
 
-    @Test(dependsOnMethods = "register")
+    @Test
     public void contulMeuButton() {
         loginPage.hoverOver();
         loginPage.login("futureisahead@gmail.com", "katana88");

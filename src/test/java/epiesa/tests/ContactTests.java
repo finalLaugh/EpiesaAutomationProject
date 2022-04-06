@@ -9,4 +9,9 @@ public class ContactTests extends BaseTest {
         contact.mailToLink();
     }
 
+    @Test
+    public void checkMailToValidity() {
+        contact.checkAnchors();
+    }
+
 }
