@@ -21,7 +21,6 @@ public class ShoppingCart extends BasePage {
     By adaugaInCos = By.xpath("//button[normalize-space()='ADAUGA IN COS']");
     By cosulMeu = By.xpath("//a[@class='dropdown-toggle a-tag']//img[@class='cart-icon']");
     By selectCant = By.xpath("//div[@class='input_form']/select");
-    By selectNumarCant = By.cssSelector("option[value='2']");
     By continuaCumparaturile = By.cssSelector("div[class='col-xs-12 col-sm-3'] button[class='btn_yellow']");
     By filtruAer = By.cssSelector("p a[title='Filtru aer DACIA LOGAN (LS_) 1.4 (LSOA, LSOC, LSOE, LSOG) benzina 75 cai']");
     By filtruAerMT6250 = By.xpath("//form[@id='adauga_piesa_cos_6404709']//button[@class='btn_red'][normalize-space()='ADAUGA IN COS']");
@@ -35,29 +34,51 @@ public class ShoppingCart extends BasePage {
         return this;
     }
 
-    public void shoppingCartTest() {
+    public void pieseAutoMenu() {
         LOG.info("Click on 'Piese Auto' menu");
         driver.findElement(pieseAutoMenu).click();
+    }
+
+    public void daciaMarca() {
         LOG.info("Click on 'Dacia' logo");
         driver.findElement(daciaLogo).click();
+    }
+
+    public void loganModel() {
         LOG.info("Click on 'LOGAN' logo/link");
         scrollIntoView(loganLogo);
         sleep(1000);
         driver.findElement(loganLogo).click();
+    }
+
+    public void loganModelLS2004() {
         LOG.info("Click on 'LOGAN' model");
         driver.findElement(loganModel).click();
-        LOG.info("Click on 1.4 engine size");
-        scrollIntoView(loganEngine);
-        sleep(1000);
+    }
+
+    public void loganBenzina14() {
+        LOG.info("Click on 1.4 - 75 cai");
         driver.findElement(loganEngine).click();
+    }
+
+    public void loganBenzina14_75cai() {
         LOG.info("Click on 1.4 - 75 cai");
         driver.findElement(loganHorse).click();
+    }
+
+    public void placuteFrana() {
         LOG.info("Click on 'Placute frana' link");
         scrollIntoView(placuteFrana);
         sleep(1000);
         driver.findElement(placuteFrana).click();
+    }
+
+    public void placuteFranaStarline() {
         LOG.info("Click on 'PLACUTE FRANA DACIA LOGAN (LS_) 1.4 (LSOA, LSOC, LSOE, LSOG) BENZINA 75 CAI STARLINE BDS025' link");
         driver.findElement(starlineBDS025).click();
+    }
+
+    public void tabbedMenu() {
         LOG.info("Click on 'Continut pachet' tab");
         scrollIntoView(continutPachet);
         sleep(1000);
@@ -66,29 +87,56 @@ public class ShoppingCart extends BasePage {
         driver.findElement(review).click();
         LOG.info("Click on 'Piesa veche la schimb' tab");
         driver.findElement(piesaVecheLaSchimb).click();
+    }
+
+    public void adaugaInCos() {
         LOG.info("Click on 'Adauga in cos' button");
         scrollIntoView(adaugaInCos);
         sleep(1000);
         driver.findElement(adaugaInCos).click();
         LOG.info("Click on 'Cosul meu' button");
         driver.findElement(cosulMeu).click();
+    }
+
+    public void cantitateDropdownMenu() {
         LOG.info("Click on quantity drop-down menu and select 2");
         selectDropdown("2");
         sleep(1000);
+    }
+
+    public void continuaCumparaturile() {
         LOG.info("Click on 'Continua cumparaturile' button");
         driver.findElement(continuaCumparaturile).click();
+    }
+
+    public void filtruAer() {
         LOG.info("Click on 'Filtru aer' text link");
         driver.findElement(filtruAer).click();
+    }
+
+    public void adaugaInCos2() {
         LOG.info("Click on 'Adauga in cos' button");
         driver.findElement(filtruAerMT6250).click();
+    }
+
+    public void clickCosulMeu() {
         LOG.info("Click on 'Cosul meu' button");
         driver.findElement(cosulMeu).click();
+    }
+
+    public void clickBinIcon() {
         LOG.info("Click on 'Bin' button");
         driver.findElement(cosStergereProdus).click();
+    }
+
+    public void trimiteComanda() {
         LOG.info("Click on 'Trimite Comanda' button");
         driver.findElement(trimiteComanda).click();
         sleep(1000);
         driver.switchTo().alert().accept();
+    }
+
+    public void numePrenumeTrimiteComanda() {
         LOG.info("Complete Nume si Prenume field");
         scrollIntoView(numeSiPrenume);
         sleep(1000);
@@ -110,5 +158,4 @@ public class ShoppingCart extends BasePage {
         down.selectByValue(option);
         return this;
     }
-
 }

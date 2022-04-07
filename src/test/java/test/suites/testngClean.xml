@@ -4,7 +4,9 @@
 <suite name="PassedTests" verbose="1" >
     <test name="PassedTests" >
         <classes>
+            <class name="epiesa.tests.home.HomepageTests" />
             <class name="epiesa.tests.login.LoginPageTests" />
+            <class name="epiesa.tests.register.RegisterTests" />
             <class name="epiesa.tests.shoppingCart.ShoppingCartTests" />
         </classes>
     </test>

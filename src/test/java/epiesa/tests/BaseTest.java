@@ -9,7 +9,6 @@ import epiesa.pages.shopping.cart.ShoppingCart;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-
 public class BaseTest {
 
     public HomePage homePage = new HomePage();
@@ -23,6 +22,8 @@ public class BaseTest {
         BasePage.setUp();
     }
 
-    @AfterSuite(enabled = false)
-    public void tearDown() { BasePage.tearDown(); }
+    @AfterSuite
+    public void tearDown() {
+        BasePage.tearDown();
+    }
 }

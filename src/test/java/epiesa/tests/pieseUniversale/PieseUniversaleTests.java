@@ -9,5 +9,7 @@ public class PieseUniversaleTests extends BaseTest {
     public void pieseUniversaleDropDown() {
         pieseUniversale.pieseUniversaleDropDown();
         pieseUniversale.checkThumbnail();
+        pieseUniversale.takePageScreenshots();
+        pieseUniversale.screenShotBrokenImage();
     }
 }
