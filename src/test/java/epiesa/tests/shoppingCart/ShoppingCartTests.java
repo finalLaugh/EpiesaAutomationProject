@@ -8,7 +8,7 @@ public class ShoppingCartTests extends BaseTest {
     @Test
     public void contulMeuButton() {
         shoppingCart.hoverOver();
-        loginPage.login("futureisahead@gmail.com", "katana88");
+        loginPage.login("ahead@gmail.com", "katana88");
         shoppingCart.pieseAutoMenu();
         shoppingCart.daciaMarca();
         shoppingCart.loganModel();

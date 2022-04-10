@@ -16,10 +16,9 @@ public class LoginPage extends BasePage {
     By emailLogin = By.xpath("//input[@name='login_utilizator']");
     By parolaLogin = By.xpath("//input[@name='login_parola']");
     By autentificare = By.xpath("//button[normalize-space()='Autentificare']");
-    By delogare = By.xpath("(//a[normalize-space()='DELOGHEAZA-MA'])[2]");
+    By delogare = By.xpath("//li[contains(@class,'dropdown hover-dropdown')]//ul[contains(@class,'dropdown-menu default-menu')]//li//a[normalize-space()='DELOGHEAZA-MA']");
 
     public LoginPage hoverOver() {
-        sleep(1000);
         LOG.info("Hover on 'Contul meu'");
         hoverOverElement(contulMeu);
         return this;

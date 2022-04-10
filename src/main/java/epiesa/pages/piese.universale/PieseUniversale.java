@@ -35,8 +35,10 @@ public class PieseUniversale extends BasePage {
         }
     }
 
+/*
     public PieseUniversale screenShotBrokenImage() {
         takeElementScreenshot(inelEtansare);
         return this;
     }
+*/
 }

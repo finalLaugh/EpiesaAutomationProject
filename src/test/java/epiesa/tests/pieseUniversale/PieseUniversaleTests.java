@@ -10,6 +10,5 @@ public class PieseUniversaleTests extends BaseTest {
         pieseUniversale.pieseUniversaleDropDown();
         pieseUniversale.checkThumbnail();
         pieseUniversale.takePageScreenshots();
-        pieseUniversale.screenShotBrokenImage();
     }
 }
